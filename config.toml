@@ -1,52 +1,83 @@
-# Base URL used when generating links to your pages
-# Set to the URL for your site
-baseURL = "https://example.com"
-
-# The name of this wonderful theme ;-).
-theme = 'hugo-theme-diary'
-
-# Basic metadata configuration for your blog.
-title = "夏大河的随笔"
-author = "Dahe Xia"
-copyright = "Copyright © 2023, Dahe Xia."
+baseURL = "https://blog.p8r.top/"
+DefaultContentLanguage = "zh" # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = "zh-CN"
+title = "夏大河的随笔"
+copyright = "Copyright © 2023, Dahe Xia."
+theme = "hugo-theme-diary"
+# googleAnalytics = "UA-123-45"
 
-# Generate a nice robots.txt for SEO
-enableRobotsTXT = true
+buildfuture = true
 
-# Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
-disableKinds = ["taxonomy"]
-ignoreErrors = ["error-disable-taxonomy"]
-[permalinks]
-blog = "/:slug/"
-tags = "/blog/:slug"
+[markup]
+[markup.highlight]
+codeFences = true
+guessSyntax = false
+hl_Lines = ""
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = true
+noClasses = true
+style = "perldoc"
+tabWidth = 4
 
 [params]
-# The "description" of your website. This is used in the meta data of your generated html.
-description = "Hugo + Bear = :heart:"
+subtitle = "道阻且长，且行将至"
+enableGitalk = false
+enableGiscus = true
+enableReadingTime = true
 
-# The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
-# Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
-favicon = "images/favicon.png"
+# Microsoft Clarity (https://clarity.microsoft.com/) is a free user behavior recording and analytics tool
+clarity = "abcdefghzd"
 
-# These "images" are used for the structured data templates. This will show up, when
-# services like Twitter or Slack want to generate a preview of a link to your site.
-# See https://gohugo.io/templates/internal#twitter-cards and
-# https://gohugo.io/templates/internal#open-graph.
-images = ["images/share.png"]
+# Twitter Card and Open Graph settings
+enableOpenGraph = true
+enableTwitterCards = true
+title = "My Blog" # will set 'og:site_name'
+description = "My HomePage Description"  # will set 'og:description'
 
-# Another "title" :-). This one is used as the site_name on the Hugo's internal
-# opengraph structured data template.
-# See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
-title = "Hugo ʕ•ᴥ•ʔ Bear1111"
+[params.gitalk]
+owner = "user"
+repo = "repo name"
+client_id = "your client id"
+client_secret = "your client secret"
+[taxonomies]
+tag = "tags"
+category = "categories"
 
-# This theme will, by default, inject a made-with-line at the bottom of the page.
-# You can turn it off, but we would really appreciate if you don’t :-).
-# hideMadeWithLine = true
+[params.utterances]
+repo="your repo"
+term="[ENTER TERM HERE]"
+label="your label"
+theme="github-light"
 
-# By default, this theme displays dates with a format like "02 Jan, 2006", but
-# you can customize it by setting the `dateFormat` param in your site's config
-# file. See [Hugo's Format function docs](https://gohugo.io/functions/format/)
-# for details. An example TOML config that uses [ISO
-# 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
-dateFormat = "2023-04-17"
+# Please visit https://giscus.app/ to generate settings.
+[params.giscus]
+data_repo="username/repo"
+data-repo-id="**************************"
+data_category="General"
+data_category_id="*********************"
+data_mapping="pathname"
+data_strict="0"
+data_reactions_enabled="1"
+data_emit_metadata="0"
+data_input_position="bottom"
+data_theme="preferred_color_scheme"
+data_lang="en"
+crossorigin="anonymous"
+
+[[menu.main]]
+url = "/posts"
+name = "归档"
+weight = 1
+[[menu.main]]
+url = "/categories"
+name = "分类"
+weight = 2
+[[menu.main]]
+url = "/tags"
+name = "标签"
+weight = 3
+[[menu.main]]
+url = "/about/"
+name = "关于"
+weight = 4
