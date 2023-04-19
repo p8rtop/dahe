@@ -6,8 +6,6 @@ copyright = "Copyright © 2023, Dahe Xia."
 theme = "hugo-theme-diary"
 # googleAnalytics = "UA-123-45"
 
-buildfuture = true
-
 [markup]
 [markup.highlight]
 codeFences = true
